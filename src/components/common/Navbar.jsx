@@ -24,9 +24,9 @@ function Navbar({ balance }) {
                 <div className="flex gap-3 items-center">
                     <span className="text-2xl font-['Outfit']">
                         {balance >= 0 ? (
-                            <span className="flex gap-2 items-center text-emerald-500 "><Plus /> {balance} R$</span>
+                            <span className="flex gap-2 items-center text-finance-income "><Plus /> {balance} R$</span>
                         ) : (
-                            <span className="flex gap-2 items-center text-red-500"><Minus /> {balance * -1} R$</span>
+                            <span className="flex gap-2 items-center text-finance-expense"><Minus /> {balance * -1} R$</span>
                         )}
                     </span>
                 </div>
