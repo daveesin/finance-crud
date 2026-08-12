@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "./components/common/Navbar";
+import Footer from "./components/common/Footer";
 
 function App() {
 
@@ -13,9 +14,13 @@ function App() {
   }, 0);
 
   return(
-    <div>
+    <div className="flex flex-col justify-between">
 
       <Navbar balance={currentBalance} />
+      <main className="min-h-screen">
+        <h1>Main</h1>
+      </main>
+      <Footer />
     
     </div>
   );
