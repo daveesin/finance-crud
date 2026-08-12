@@ -1,6 +1,6 @@
-import { Wallet } from "lucide-react";
+import { Wallet, Plus, Minus } from "lucide-react";
 
-function Navbar() {
+function Navbar({ balance=1000 }) {
     return(
         <header className="bg-finance-bg backdrop-blur-md sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -21,7 +21,16 @@ function Navbar() {
                     </a>
                 </nav>
 
-                
+                <div className="flex gap-3 items-center">
+                    <span className="text-2xl font-['Outfit']">
+                        {balance >= 0 ? (
+                            <span className="flex gap-2 items-center text-emerald-500 "><Plus /> {balance} R$</span>
+                        ) : (
+                            <span className="flex gap-2 items-center text-red-500"><Minus /> {balance * -1} R$</span>
+                        )}
+                    </span>
+                </div>
+
             </div>
         </header>
     );
