@@ -1,6 +1,6 @@
 import { Wallet, Plus, Minus } from "lucide-react";
 
-function Navbar({ balance=1000 }) {
+function Navbar({ balance }) {
     return(
         <header className="bg-finance-bg backdrop-blur-md sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
