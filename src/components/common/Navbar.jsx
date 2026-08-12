@@ -8,9 +8,20 @@ function Navbar() {
                     <Wallet className="text-emerald-500 " />
                     <h1 className="text-finance-text font-bold text-xl tracking-tight font-['Outfit']">Finance Control</h1>
                 </div>
-                <nav>
-                    
+
+                <nav className="flex gap-10 items-center">
+                    <a href="#dashboard" className="text-finance-text tracking-tight font-['Outfit']">
+                        Dashbooard
+                    </a>
+                    <a href="#transactions" className="text-finance-text tracking-tight font-['Outfit']">
+                        Transactions
+                    </a>
+                    <a href="#categories" className="text-finance-text tracking-tight font-['Outfit']">
+                        Categories
+                    </a>
                 </nav>
+
+                
             </div>
         </header>
     );
