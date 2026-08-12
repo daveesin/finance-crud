@@ -55,8 +55,9 @@ Follow these sequential steps to build the application systematically:
 ### Phase 1: Project Setup & Layout
 [x]1. Initialize the project using Vite with React (`npm create vite@latest`).
 [x]2. Configure **Tailwind CSS** and install an icon library (e.g., `lucide-react`).
-[]3. Build the base layout shell (`Navbar`, main container, and `Footer`).
-
+[x]3. Build the base layout shell (`Navbar`, main container, and `Footer`).
+[ ]4. Build the first component (**Transactions** to show a list) and implement React-Router-Dom navigation (`React-Router-Dom`).
+ 
 ### Phase 2: State Definition & Mock Data
 []1. Define the initial data schema for transactions in a `mockData.js` file or state initializer.
 []2. Set up the primary `transactions` state array in `App.jsx` or a main page component.
