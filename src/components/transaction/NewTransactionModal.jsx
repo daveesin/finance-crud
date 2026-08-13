@@ -5,7 +5,7 @@ function NewTransactionModal({ isTModalOpen, onCloseNTModal }) {
             {isTModalOpen && (
                 <div>
                     <h1>New Transaction Modal</h1>
-                    <button onClick={() => onCloseNTModal(false)}>Close</button>
+                    <button onClick={() => onCloseNTModal()}>Close</button>
                 </div>
             )}
             

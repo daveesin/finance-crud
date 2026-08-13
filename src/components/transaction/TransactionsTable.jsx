@@ -33,7 +33,7 @@ function TransactionsTable({ onNTClick }) {
                     />
                     <button 
                         className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-finance-income border border-finance-border text-finance-bg font-semibold text-sm hover:opacity-90 transition-opacity whitespace-nowrap shadow-sm"
-                        onClick={() => onNTClick(true)}
+                        onClick={() => onNTClick()}
                     >
                         <Plus className="w-4 h-4 stroke-[2.5]" />
                         <span>New Transaction</span>

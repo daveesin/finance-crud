@@ -9,11 +9,13 @@ function Transactions() {
     return(
         <div className="flex flex-col items-center justify-center gap-3">
 
-            <TransactionsTable onNTClick={setIsTModalOpen} />
+            <TransactionsTable
+                onNTClick={() => setIsTModalOpen(true)}
+            />
 
-            <NewTransactionModal 
+            <NewTransactionModal
                 isTModalOpen={isTModalOpen}
-                onCloseNTModal={setIsTModalOpen}
+                onCloseNTModal={() => setIsTModalOpen(false)}
             />
 
         </div>
