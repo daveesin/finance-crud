@@ -18,8 +18,8 @@ function App() {
     <div className="flex flex-col justify-between">
 
       <Navbar balance={currentBalance} />
-      <main className="min-h-screen">
-        <Outlet context={{transactions, setTransactions}} />
+      <main className="min-h-screen mt-6">
+        <Outlet context={{ transactions, setTransactions }} />
       </main>
       <Footer />
     
