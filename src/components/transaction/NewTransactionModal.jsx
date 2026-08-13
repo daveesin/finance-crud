@@ -46,7 +46,7 @@ function NewTransactionModal({ isTModalOpen, onCloseNTModal }) {
                 
                 <div className="flex items-center justify-between mb-6">
                 <h2 className="text-xl font-bold text-finance-text font-['Outfit']">
-                    Nova Transação
+                    New Transaction
                 </h2>
                 <button
                     onClick={onCloseNTModal}
@@ -60,7 +60,7 @@ function NewTransactionModal({ isTModalOpen, onCloseNTModal }) {
                 
                     <div className="flex flex-col gap-1.5">
                         <label className="text-xs font-semibold text-finance-muted uppercase tracking-wider">
-                            Descrição
+                            Description
                         </label>
                         <input
                             type="text"
@@ -74,7 +74,7 @@ function NewTransactionModal({ isTModalOpen, onCloseNTModal }) {
 
                     <div className="flex flex-col gap-1.5">
                         <label className="text-xs font-semibold text-finance-muted uppercase tracking-wider">
-                            Valor (R$)
+                            Amount (R$)
                         </label>
                         <input
                             type="number"
@@ -89,7 +89,7 @@ function NewTransactionModal({ isTModalOpen, onCloseNTModal }) {
 
                     <div className="flex flex-col gap-1.5">
                         <label className="text-xs font-semibold text-finance-muted uppercase tracking-wider">
-                            Tipo
+                            Type
                         </label>
                         <div className="grid grid-cols-2 gap-3">
                             <button
@@ -102,7 +102,7 @@ function NewTransactionModal({ isTModalOpen, onCloseNTModal }) {
                                 }`}
                             >
                                 <ArrowUpCircle className="w-4 h-4" />
-                                <span>Entrada</span>
+                                <span>Income</span>
                             </button>
 
                             <button
@@ -115,19 +115,19 @@ function NewTransactionModal({ isTModalOpen, onCloseNTModal }) {
                                 }`}
                             >
                                 <ArrowDownCircle className="w-4 h-4" />
-                                <span>Saída</span>
+                                <span>Expense</span>
                             </button>
                         </div>
                     </div>
 
                     <div className="flex flex-col gap-1.5">
                         <label className="text-xs font-semibold text-finance-muted uppercase tracking-wider">
-                        Categoria
+                            Category
                         </label>
                         <input
                         type="text"
                         required
-                        placeholder="Ex: Trabalho, Alimentação..."
+                        placeholder="Ex: Work, Hobby..."
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
                         className="w-full px-4 py-2.5 rounded-xl bg-finance-bg border border-finance-border text-finance-text placeholder:text-finance-muted text-sm focus:outline-none focus:border-finance-income font-['Outfit']"
@@ -140,13 +140,13 @@ function NewTransactionModal({ isTModalOpen, onCloseNTModal }) {
                             onClick={onCloseNTModal}
                             className="px-4 py-2.5 rounded-xl border border-finance-border text-finance-muted hover:text-finance-text font-semibold text-sm transition-colors"
                         >
-                            Cancelar
+                            Cancel
                         </button>
                         <button
                             type="submit"
                             className="px-5 py-2.5 rounded-xl bg-finance-income text-finance-bg font-semibold text-sm hover:opacity-90 transition-opacity shadow-sm"
                         >
-                            Salvar
+                            Save
                         </button>
                     </div>
 
