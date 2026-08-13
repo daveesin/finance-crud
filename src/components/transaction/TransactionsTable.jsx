@@ -23,7 +23,7 @@ function TransactionsTable() {
 
             <div className="w-full max-w-4xl bg-finance-muted border border-finance-border rounded-2xl p-5 shadow-sm">
                 <div className="flex gap-3 items-center relative w-full max-w-4xl">
-                    <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-finance-muted" />
+                    <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-finance-muted gap-4" />
                     <input
                         className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-finance-card border border-finance-border text-finance-text placeholder:text-finance-muted font-['Outfit'] text-sm transition-all focus:outline-none focus:border-finance-income focus:ring-1 focus:ring-finance-income"
                         type="text"
@@ -31,6 +31,12 @@ function TransactionsTable() {
                         value={searchTerm}
                         onChange={(event) => setSearchTerm(event.target.value)}
                     />
+                    <button 
+                        className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-finance-income border-finance-border text-finance-bg font-semibold text-sm hover:opacity-90 transition-opacity whitespace-nowrap shadow-sm"
+                    >
+                        <Plus className="w-4 h-4 stroke-[2.5]" />
+                        <span>New Transaction</span>
+                    </button>
                 </div>
 
                 <table className="w-full max-w-4xl border-separate border-spacing-y-2.5">
