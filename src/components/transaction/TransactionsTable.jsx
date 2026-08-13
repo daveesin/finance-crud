@@ -32,7 +32,7 @@ function TransactionsTable() {
                         onChange={(event) => setSearchTerm(event.target.value)}
                     />
                     <button 
-                        className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-finance-income border-finance-border text-finance-bg font-semibold text-sm hover:opacity-90 transition-opacity whitespace-nowrap shadow-sm"
+                        className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-finance-income border border-finance-border text-finance-bg font-semibold text-sm hover:opacity-90 transition-opacity whitespace-nowrap shadow-sm"
                     >
                         <Plus className="w-4 h-4 stroke-[2.5]" />
                         <span>New Transaction</span>
