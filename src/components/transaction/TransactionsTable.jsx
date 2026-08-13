@@ -1,10 +1,10 @@
 import { useOutletContext } from "react-router-dom"
-import { Plus, Minus, Search } from "lucide-react"
+import { Plus, Minus, Search, Trash} from "lucide-react"
 import { useState } from "react";
 
 function TransactionsTable({ onNTClick }) {
 
-    const { transactions } = useOutletContext();
+    const { transactions, handleDeleteTransaction } = useOutletContext();
     const [searchTerm, setSearchTerm] = useState("");
 
     const filteredTransactions = transactions.filter((t) => t.description.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -47,7 +47,8 @@ function TransactionsTable({ onNTClick }) {
                             <th className="px-6 py-3 text-center">Amount</th>
                             <th className="px-6 py-3 text-center">Type</th>
                             <th className="px-6 py-3 text-center">Category</th>
-                            <th className="px-6 py-3 text-center last:rounded-r-xl">Date</th>
+                            <th className="px-6 py-3 text-center">Date</th>
+                            <th className="px-6 py-3 text-center  last:rounded-r-xl" />
                         </tr>
                     </thead>
                     <tbody className="text-sm text-finance-text">
@@ -75,6 +76,16 @@ function TransactionsTable({ onNTClick }) {
                                 </td>
                                 <td className="px-6 py-4 font-['Outfit'] text-center last:rounded-r-xl">
                                     {t.date}
+                                </td>
+                                
+                                <td className="px-6 py-4 text-center last:rounded-r-xl">
+                                    <button 
+                                        type="button"
+                                        onClick={() => handleDeleteTransaction(t)}
+                                        className="text-finance-expense hover:text-red-800 transition-colors p-1"
+                                    >
+                                        <Trash className="w-4 h-4 mx-auto cursor-pointer" />
+                                    </button>
                                 </td>
                             </tr>
                         ))}

@@ -17,7 +17,7 @@ function App() {
     return item.type === "income" ? acc + item.amount : acc - item.amount;
   }, 0);
 
-  //Define a function to add a new task in the list:
+  //Define a function to add a new transaction in the list:
   function handleAddNewTransaction(description, amount, type, category, date){
 
     const newTransaction = {
@@ -32,13 +32,20 @@ function App() {
     setTransactions([...transactions, newTransaction]);
   }
 
+  //Define a function to delete a task:
+  function handleDeleteTransaction(transaction) {
+    setTransactions(transactions.filter( (t) => 
+      t.id !== transaction.id
+    ));
+  }
+
   //Return the component render:
   return(
     <div className="flex flex-col justify-between">
 
       <Navbar balance={currentBalance} />
       <main className="min-h-screen mt-6">
-        <Outlet context={{ transactions, setTransactions, handleAddNewTransaction }} />
+        <Outlet context={{ transactions, setTransactions, handleAddNewTransaction, handleDeleteTransaction }} />
       </main>
       <Footer />
     
