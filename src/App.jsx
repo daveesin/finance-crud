@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 
@@ -18,7 +19,7 @@ function App() {
 
       <Navbar balance={currentBalance} />
       <main className="min-h-screen">
-        <h1>Main</h1>
+        <Outlet context={{transactions, setTransactions}} />
       </main>
       <Footer />
     
