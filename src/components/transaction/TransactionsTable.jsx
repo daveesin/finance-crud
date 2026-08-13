@@ -2,7 +2,7 @@ import { useOutletContext } from "react-router-dom"
 import { Plus, Minus, Search } from "lucide-react"
 import { useState } from "react";
 
-function TransactionsTable() {
+function TransactionsTable({ onNTClick }) {
 
     const { transactions } = useOutletContext();
     const [searchTerm, setSearchTerm] = useState("");
@@ -33,6 +33,7 @@ function TransactionsTable() {
                     />
                     <button 
                         className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-finance-income border border-finance-border text-finance-bg font-semibold text-sm hover:opacity-90 transition-opacity whitespace-nowrap shadow-sm"
+                        onClick={() => onNTClick(true)}
                     >
                         <Plus className="w-4 h-4 stroke-[2.5]" />
                         <span>New Transaction</span>
