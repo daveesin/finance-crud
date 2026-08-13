@@ -32,11 +32,20 @@ function App() {
     setTransactions([...transactions, newTransaction]);
   }
 
-  //Define a function to delete a task:
-  function handleDeleteTransaction(transaction) {
+  //Define a function to delete a transaction:
+  function handleDeleteTransaction(transactionId) {
     setTransactions(transactions.filter( (t) => 
-      t.id !== transaction.id
+      t.id !== transactionId
     ));
+  }
+
+
+  //Define a function to edit a transaction:
+  function handleEditTransaction(updatedTransaction) {
+    setTransactions((prevTransactions) =>
+      prevTransactions.map((t) => 
+      t.id === updatedTransaction.id ? updatedTransaction : t
+    ))
   }
 
   //Return the component render:
@@ -45,7 +54,7 @@ function App() {
 
       <Navbar balance={currentBalance} />
       <main className="min-h-screen mt-6">
-        <Outlet context={{ transactions, setTransactions, handleAddNewTransaction, handleDeleteTransaction }} />
+        <Outlet context={{ transactions, setTransactions, handleAddNewTransaction, handleDeleteTransaction, handleEditTransaction }} />
       </main>
       <Footer />
     

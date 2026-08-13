@@ -1,8 +1,8 @@
 import { useOutletContext } from "react-router-dom"
-import { Plus, Minus, Search, Trash} from "lucide-react"
+import { Plus, Minus, Search, Trash, Edit} from "lucide-react"
 import { useState } from "react";
 
-function TransactionsTable({ onNTClick }) {
+function TransactionsTable({ onNTClick, onETClick }) {
 
     const { transactions, handleDeleteTransaction } = useOutletContext();
     const [searchTerm, setSearchTerm] = useState("");
@@ -48,6 +48,7 @@ function TransactionsTable({ onNTClick }) {
                             <th className="px-6 py-3 text-center">Type</th>
                             <th className="px-6 py-3 text-center">Category</th>
                             <th className="px-6 py-3 text-center">Date</th>
+                            <th className="px-6 py-3 text-center" />
                             <th className="px-6 py-3 text-center  last:rounded-r-xl" />
                         </tr>
                     </thead>
@@ -77,11 +78,20 @@ function TransactionsTable({ onNTClick }) {
                                 <td className="px-6 py-4 font-['Outfit'] text-center last:rounded-r-xl">
                                     {t.date}
                                 </td>
+                                <td className="px-6 py-4 text-center last:rounded-r-xl">
+                                    <button 
+                                        type="button"
+                                        onClick={() => onETClick(t)}
+                                        className="text-yellow-500 hover:text-yellow-800 transition-colors p-1"
+                                    >
+                                        <Edit className="w-4 h-4 mx-auto cursor-pointer" />
+                                    </button>
+                                </td>
                                 
                                 <td className="px-6 py-4 text-center last:rounded-r-xl">
                                     <button 
                                         type="button"
-                                        onClick={() => handleDeleteTransaction(t)}
+                                        onClick={() => handleDeleteTransaction(t.id)}
                                         className="text-finance-expense hover:text-red-800 transition-colors p-1"
                                     >
                                         <Trash className="w-4 h-4 mx-auto cursor-pointer" />

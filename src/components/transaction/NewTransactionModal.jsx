@@ -2,17 +2,16 @@ import { useOutletContext } from "react-router-dom";
 import { useState } from "react";
 import { X, ArrowUpCircle, ArrowDownCircle } from "lucide-react";
 
-function NewTransactionModal({ isTModalOpen, onCloseNTModal }) {
+function NewTransactionModal({ isModalOpen, onCloseModal, editingTransaction }) {
 
-    const { handleAddNewTransaction } = useOutletContext();
+    const { handleAddNewTransaction, handleEditTransaction } = useOutletContext();
 
-    const [description, setDescription] = useState("");
-    const [amount, setAmount] = useState(0);
-    const [type, setType] = useState("");
-    const [category, setCategory] = useState("");
+    const [description, setDescription] = useState(editingTransaction?.description || "");
+    const [amount, setAmount] = useState(editingTransaction?.amount || "");
+    const [type, setType] = useState(editingTransaction?.type || "income");
+    const [category, setCategory] = useState(editingTransaction?.category || "");
 
-
-    if (!isTModalOpen) return null;
+    if (!isModalOpen) return null;
 
     //Define a function to clear the Modal:
     function handleClearModal() {
@@ -22,21 +21,38 @@ function NewTransactionModal({ isTModalOpen, onCloseNTModal }) {
         setCategory("");
     }
 
-    //Define a function to use on the submit button to save the transaction and clear the modal
+    //Define a function to use on the submit button to save the new transaction edit the current one and clear the modal:
     function handleSubmit(e) {
         e.preventDefault();
 
-        const formattedDate = new Date().toISOString().split('T')[0];
-        
-        handleAddNewTransaction(
-            description, 
-            Number(amount),
-            type, 
-            category, 
-            formattedDate
-        );
-        handleClearModal();
-        onCloseNTModal();
+        if(editingTransaction !== null){
+
+            const updatedTransaction = {
+                ...editingTransaction,
+                description: description,
+                amount: Number(amount),
+                type: type,
+                category: category
+            };
+
+            handleEditTransaction(updatedTransaction);
+            handleClearModal();
+            onCloseModal();
+
+        } else {
+
+            const formattedDate = new Date().toISOString().split('T')[0];
+            
+            handleAddNewTransaction(
+                description, 
+                Number(amount),
+                type, 
+                category, 
+                formattedDate
+            );
+            handleClearModal();
+            onCloseModal();
+        }
     }
 
 
@@ -46,10 +62,10 @@ function NewTransactionModal({ isTModalOpen, onCloseNTModal }) {
                 
                 <div className="flex items-center justify-between mb-6">
                 <h2 className="text-xl font-bold text-finance-text font-['Outfit']">
-                    New Transaction
+                    {editingTransaction !== null ? editingTransaction.description : 'New Transaction'}
                 </h2>
                 <button
-                    onClick={onCloseNTModal}
+                    onClick={onCloseModal}
                     className="text-finance-muted hover:text-finance-text transition-colors p-1 rounded-lg hover:bg-finance-bg"
                 >
                     <X className="w-5 h-5" />
@@ -137,7 +153,7 @@ function NewTransactionModal({ isTModalOpen, onCloseNTModal }) {
                     <div className="flex items-center justify-end gap-3 mt-4">
                         <button
                             type="button"
-                            onClick={onCloseNTModal}
+                            onClick={onCloseModal}
                             className="px-4 py-2.5 rounded-xl border border-finance-border text-finance-muted hover:text-finance-text font-semibold text-sm transition-colors"
                         >
                             Cancel
