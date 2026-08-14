@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Wallet, Plus, Minus } from "lucide-react";
 
 function Navbar({ balance }) {
@@ -10,15 +11,15 @@ function Navbar({ balance }) {
                 </div>
 
                 <nav className="flex gap-10 items-center">
-                    <a href="#dashboard" className="text-finance-text tracking-tight font-['Outfit']">
+                    <Link to="/dashboard" className="text-finance-text tracking-tight font-['Outfit']">
                         Dashbooard
-                    </a>
-                    <a href="#transactions" className="text-finance-text tracking-tight font-['Outfit']">
+                    </Link>
+                    <Link to="/" className="text-finance-text tracking-tight font-['Outfit']">
                         Transactions
-                    </a>
-                    <a href="#categories" className="text-finance-text tracking-tight font-['Outfit']">
-                        Categories
-                    </a>
+                    </Link>
+                    <Link to="/Categories" className="text-finance-text tracking-tight font-['Outfit']">
+                        Categories (Soon)
+                    </Link>
                 </nav>
 
                 <div className="flex gap-3 items-center">

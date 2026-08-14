@@ -3,7 +3,7 @@ import TopCards from "../components/dashboard/TopCards";
 
 function Dashboard() {
     return(
-        <div>
+        <div className="flex flex-col items-center justify-center gap-3">
             <PageTitle 
                 title={"Dashboard"}
                 description={"Acompanhe em tempo real os dados do seu controle financeiro"}
