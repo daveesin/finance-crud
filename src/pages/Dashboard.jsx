@@ -2,6 +2,7 @@ import { useOutletContext } from "react-router-dom";
 import PageTitle from "../components/common/PageTitle";
 import TopCards from "../components/dashboard/TopCards";
 import GraphicsSection from "../components/dashboard/GraphicsSection";
+import LastTransactionsList from "../components/dashboard/LastTransactionsList";
 
 function Dashboard() {
 
@@ -55,6 +56,9 @@ function Dashboard() {
                 incomeAmount={incomeAmount}
                 expenseAmount={expenseAmount}
                 expensesByCategory={expensesByCategory}
+                formatCurrency={formatCurrency}
+            />
+            <LastTransactionsList
                 formatCurrency={formatCurrency}
             />
         </div>
