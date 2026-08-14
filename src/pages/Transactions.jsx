@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TransactionsTable from "../components/transaction/TransactionsTable";
 import NewTransactionModal from "../components/transaction/NewTransactionModal";
+import PageTitle from "../components/common/PageTitle";
 
 function Transactions() {
 
@@ -27,6 +28,11 @@ function Transactions() {
 
     return(
         <div className="flex flex-col items-center justify-center gap-3">
+
+            <PageTitle 
+                title={"Transactions"}
+                description={"Gerencie e acompanhe todos os seus ganhos e despesas."}
+            />
 
             <TransactionsTable
                 onNTClick={handleStartNewModal}
