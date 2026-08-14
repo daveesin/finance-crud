@@ -1,6 +1,7 @@
 import { useOutletContext } from "react-router-dom";
 import { useState } from "react";
 import { X, ArrowUpCircle, ArrowDownCircle } from "lucide-react";
+import { TRANSACTION_CATEGORIES } from "../../constants/categories";
 
 function NewTransactionModal({ isModalOpen, onCloseModal, editingTransaction }) {
 
@@ -140,14 +141,25 @@ function NewTransactionModal({ isModalOpen, onCloseModal, editingTransaction }) 
                         <label className="text-xs font-semibold text-finance-muted uppercase tracking-wider">
                             Category
                         </label>
-                        <input
-                        type="text"
-                        required
-                        placeholder="Ex: Work, Hobby..."
-                        value={category}
-                        onChange={(e) => setCategory(e.target.value)}
-                        className="w-full px-4 py-2.5 rounded-xl bg-finance-bg border border-finance-border text-finance-text placeholder:text-finance-muted text-sm focus:outline-none focus:border-finance-income font-['Outfit']"
-                        />
+                        <select
+                            required
+                            value={category}
+                            onChange={(e) => setCategory(e.target.value)}
+                            className="w-full px-4 py-2.5 rounded-xl bg-finance-bg border border-finance-border text-finance-text text-sm focus:outline-none focus:border-finance-income font-['Outfit'] cursor-pointer"
+                        >
+                            <option value="" disabled hidden>
+                                Selecione uma categoria...
+                            </option>
+                            {TRANSACTION_CATEGORIES.map((cat) => (
+                                <option 
+                                    key={cat.id} 
+                                    value={cat.label} 
+                                    className="bg-finance-card text-finance-text"
+                                >
+                                    {cat.label}
+                                </option>
+                            ))}
+                        </select>
                     </div>
 
                     <div className="flex items-center justify-end gap-3 mt-4">
