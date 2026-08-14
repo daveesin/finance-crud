@@ -16,12 +16,12 @@ import {
 function GraphicsSection({ incomeAmount, expenseAmount, expensesByCategory, formatCurrency }) {
 
     const CATEGORY_COLORS = [
-        "#10B981", // Verde
-        "#F59E0B", // Amarelo/Laranja
-        "#EF4444", // Vermelho
-        "#8B5CF6", // Roxo
-        "#3B82F6", // Azul
-        "#EC4899", // Rosa
+        "#10B981", 
+        "#F59E0B", 
+        "#EF4444", 
+        "#8B5CF6", 
+        "#3B82F6", 
+        "#EC4899", 
     ];
 
     const comparisonData = [
@@ -33,7 +33,7 @@ function GraphicsSection({ incomeAmount, expenseAmount, expensesByCategory, form
     ];
 
     return (
-        <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="w-full max-w-4xl grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="flex flex-col p-6 rounded-2xl bg-finance-card border border-finance-border shadow-sm">
                 <h3 className="text-lg font-bold text-finance-text font-['Outfit'] mb-4">
                     Expenses by Category
@@ -51,7 +51,7 @@ function GraphicsSection({ incomeAmount, expenseAmount, expensesByCategory, form
                                     data={expensesByCategory}
                                     cx="50%"
                                     cy="50%"
-                                    innerRadius={60} // Faz virar um gráfico de Rosca (Donut)
+                                    innerRadius={60}
                                     outerRadius={85}
                                     paddingAngle={5}
                                     dataKey="value"
@@ -67,7 +67,7 @@ function GraphicsSection({ incomeAmount, expenseAmount, expensesByCategory, form
                                 <Tooltip
                                     formatter={(value) => formatCurrency(value)}
                                     contentStyle={{
-                                        backgroundColor: "#18181b", // Ajuste conforme a cor do card
+                                        backgroundColor: "#18181b",
                                         borderColor: "#27272a",
                                         borderRadius: "12px",
                                         color: "#fff",
