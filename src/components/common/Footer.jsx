@@ -13,7 +13,7 @@ function Footer() {
 
                 <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-finance-card border border-finance-border text-[11px]">
                     <HardDrive className="w-3.5 h-3.5 text-finance-income" />
-                    <span className="text-finance-text">Storage: <strong>Local Browser (Offline)</strong></span>
+                    <span className="text-finance-text">Storage: <strong>Local Browser (Online)</strong></span>
                 </div>
 
                 <div className="flex items-center gap-4 text-finance-muted">
