@@ -1,17 +1,6 @@
-import { useOutletContext } from "react-router-dom";
 import { ArrowUpCircle, ArrowDownCircle, Wallet } from "lucide-react";
 
-function TopCards() {
-
-    const { transactions } = useOutletContext();
-
-    const incomeAmount = transactions
-        .filter((t) => t.type === 'income')
-        .reduce((acc, t) => acc + Number(t.amount || 0), 0);
-
-    const expenseAmount = transactions
-        .filter((t) => t.type === 'expense')
-        .reduce((acc, t) => acc + Number(t.amount || 0), 0);
+function TopCards({incomeAmount, expenseAmount}) {
 
     const totalBalance = incomeAmount - expenseAmount;
 
