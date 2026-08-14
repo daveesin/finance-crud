@@ -1,15 +1,8 @@
 import { ArrowUpCircle, ArrowDownCircle, Wallet } from "lucide-react";
 
-function TopCards({incomeAmount, expenseAmount}) {
+function TopCards({ incomeAmount, expenseAmount, formatCurrency }) {
 
     const totalBalance = incomeAmount - expenseAmount;
-
-    const formatCurrency = (value) => {
-        return new Intl.NumberFormat("pt-BR", {
-            style: "currency",
-            currency: "BRL",
-        }).format(value);
-    };
 
     return(
         <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-6">
