@@ -60,9 +60,8 @@ Follow these sequential steps to build the application systematically:
 
 ---
 
-### Phase 2: Other pages and navigation
-[ ]1. Create **Dashboard** page (`Dashboard.jsx / Recharts`).
-[ ]2. Create **Categories** page (`Categories.jsx`).
+### Phase 2: Dashboard and navigation
+[x]1. Create **Dashboard** page and include it on navigation (`Dashboard.jsx / Recharts / React-Router-Dom`).
 
 ---
 
