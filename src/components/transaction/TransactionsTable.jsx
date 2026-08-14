@@ -12,15 +12,6 @@ function TransactionsTable({ onNTClick, onETClick }) {
     return(
         <div className="w-full max-w-4xl flex flex-col justify-center items-center - gap-5">
 
-            <div className="w-full text-left">
-                <h1 className="text-2xl font-bold text-gray-900 font-['Outfit'] tracking-tight">
-                    Transações
-                </h1>
-                <p className="text-sm text-gray-500">
-                    Gerencie e acompanhe todos os seus ganhos e despesas.
-                </p>
-            </div>
-
             <div className="w-full max-w-4xl bg-finance-muted border border-finance-border rounded-2xl p-5 shadow-sm">
                 <div className="flex gap-3 items-center relative w-full max-w-4xl">
                     <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-finance-muted gap-4" />

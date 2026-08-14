@@ -56,30 +56,16 @@ Follow these sequential steps to build the application systematically:
 [x]1. Initialize the project using Vite with React (`npm create vite@latest`).
 [x]2. Configure **Tailwind CSS** and install an icon library (e.g., `lucide-react`).
 [x]3. Build the base layout shell (`Navbar`, main container, and `Footer`).
-[ ]4. Build the first component (**Transactions** to show a list) and implement React-Router-Dom navigation (`React-Router-Dom`).
- 
-### Phase 2: State Definition & Mock Data
-[]1. Define the initial data schema for transactions in a `mockData.js` file or state initializer.
-[]2. Set up the primary `transactions` state array in `App.jsx` or a main page component.
-[]3. Build the utility functions for currency formatting (`formatCurrency`) and date formatting (`formatDate`).
-
-### Phase 3: Core UI Components
-[]1. **Summary Cards:** Create components to dynamically compute and display Total Balance, Total Income, and Total Expenses from the `transactions` array.
-[]2. **Transaction List & Items:** Map through the state array to render transaction rows/cards with visual indicators for Income vs. Expense.
-[]3. **Empty State:** Add a friendly fallback UI when there are no transactions to display.
-
-### Phase 4: CRUD Operations
-[]1. **Create:** Build the `TransactionForm` component with controlled inputs and validation (ensure correct types for numbers and dates). Append new entries to the state with unique IDs.
-[]2. **Delete:** Add a deletion handler (`handleDeleteTransaction`) that filters out the targeted item by `id`.
-[]3. **Update:** Implement an edit mode/modal to modify existing transaction details in the state.
-
-### Phase 5: Search & Filtering
-[]1. Create state hooks for `searchTerm`, `selectedType`, and `selectedCategory`.
-[]2. Implement derived state logic to compute the `filteredTransactions` array without mutating the original state.
-[]3. Wire the filter bar inputs to update the filter states in real time.
-
-### Phase 6: Persistence & Refinement
-[]1. Implement a custom hook or `useEffect` listener to load and save transactions to `localStorage`.
-[]2. Add polish: smooth transitions, hover effects, empty search results states, and responsive design checks.
+[x]4. Build the first component (**Transactions** to show a list) and implement React-Router-Dom navigation (`React-Router-Dom`).
 
 ---
+
+### Phase 2: Other pages and navigation
+[ ]1. Create **Dashboard** page (`Dashboard.jsx / Recharts`).
+[ ]2. Create **Categories** page (`Categories.jsx`).
+
+---
+
+### Phase 2: localStorage and keep data
+[ ]1. Save the transactions using **localStorage** (`localStorage`).
+[ ]2. Load the transactions from **localStorage** (`localStorage`).
