@@ -14,11 +14,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Transactions />
+        element: <Dashboard />
       },
       {
-        path: '/dashboard',
-        element: <Dashboard />
+        path: '/transactions',
+        element: <Transactions />
       }
     ]
   },

@@ -11,10 +11,10 @@ function Navbar({ balance }) {
                 </div>
 
                 <nav className="flex gap-10 items-center">
-                    <Link to="/dashboard" className="text-finance-text tracking-tight font-['Outfit']">
+                    <Link to="/" className="text-finance-text tracking-tight font-['Outfit']">
                         Dashbooard
                     </Link>
-                    <Link to="/" className="text-finance-text tracking-tight font-['Outfit']">
+                    <Link to="/transactions" className="text-finance-text tracking-tight font-['Outfit']">
                         Transactions
                     </Link>
                     <Link to="/categories" className="text-finance-text tracking-tight font-['Outfit']">
