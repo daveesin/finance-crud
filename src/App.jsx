@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { v4 } from "uuid";
 import Navbar from "./components/common/Navbar";
@@ -6,11 +6,15 @@ import Footer from "./components/common/Footer";
 
 function App() {
 
-  //Define default transactions list:
-  const [transactions, setTransactions] = useState([
-    {id: "1", description: "Salário", amount: 3500, type: "income", category: "Trabalho", date: "2026-08-01"},
-    {id: "2", description: "Mercado", amount: 600, type: "expense", category: "Alimentação", date: "2026-08-05"}
-  ]);
+  //Define transactions list based on the localStorage:
+  const [transactions, setTransactions] = useState(
+    JSON.parse(localStorage.getItem("transactions")) || []
+  );
+
+  //Define useEffect to save every change on transactions list on the localStorage:
+  useEffect( () => {
+    localStorage.setItem("transactions", JSON.stringify(transactions));
+  }, [transactions]);
 
   //Define the current balance using the transactions list:
   const currentBalance = transactions.reduce((acc, item) => {

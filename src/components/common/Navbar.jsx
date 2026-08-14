@@ -17,9 +17,6 @@ function Navbar({ balance }) {
                     <Link to="/transactions" className="text-finance-text tracking-tight font-['Outfit']">
                         Transactions
                     </Link>
-                    <Link to="/categories" className="text-finance-text tracking-tight font-['Outfit']">
-                        Categories (Soon)
-                    </Link>
                 </nav>
 
                 <div className="flex gap-3 items-center">

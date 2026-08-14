@@ -66,5 +66,5 @@ Follow these sequential steps to build the application systematically:
 ---
 
 ### Phase 2: localStorage and keep data
-[ ]1. Save the transactions using **localStorage** (`localStorage`).
-[ ]2. Load the transactions from **localStorage** (`localStorage`).
+[x]1. Save the transactions using **localStorage** (`localStorage`).
+[x]2. Load the transactions from **localStorage** (`localStorage`).
