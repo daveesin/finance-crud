@@ -1,5 +1,7 @@
 # 📊 Finance Flow — Personal Finance Dashboard
 
+**STATUS:** ✅ Completed  / Can be improved in the future
+
 **Finance Flow** is a web application designed for personal financial management, focusing on tracking income and expenses, organizing transactions by categories, and monitoring real-time account balances.
 
 The primary objective of this project is to consolidate advanced **React** concepts (such as complex state manipulation, client-side CRUD operations, and `localStorage` persistence) while establishing a solid data structure for future integration with a **Spring Boot** backend.
